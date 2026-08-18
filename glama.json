@@ -1,0 +1,18 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "name": "superagenticmcp",
+  "displayName": "SuperAgenticMCP",
+  "description": "The switchboard for your agent swarm. Plans tasks, routes tool calls across racked MCP servers by capability and latency, streams every step, and files results into a memory-scope graph.",
+  "repository": "https://github.com/ANAMIZED/SuperAgenticMCP",
+  "license": "Apache-2.0",
+  "author": "ANAMIZED",
+  "version": "0.1.0",
+  "tags": [
+    "orchestration",
+    "multi-agent",
+    "router",
+    "switchboard",
+    "memory",
+    "telemetry"
+  ]
+}

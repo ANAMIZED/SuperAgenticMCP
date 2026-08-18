@@ -1,0 +1,73 @@
+[project]
+name = "superagenticmcp"
+version = "0.1.0"
+description = "SuperAgenticMCP — the switchboard for your agent swarm. MCP-native router and multi-agent control plane."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+authors = [{ name = "ANAMIZED", email = "anamized@example.com" }]
+keywords = [
+    "mcp",
+    "agentic",
+    "multi-agent",
+    "router",
+    "orchestration",
+    "switchboard",
+    "model-context-protocol",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "fastmcp>=2.0.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.0",
+    "pydantic-settings>=2.0",
+    "python-dotenv>=1.0",
+    "rich>=13.0",
+    "typer>=0.12",
+]
+
+[project.optional-dependencies]
+agents = ["langgraph>=0.2.0", "langchain-core>=0.3.0"]
+api = ["fastapi", "uvicorn"]
+board = ["fastapi", "uvicorn", "websockets"]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.6",
+    "build",
+    "twine",
+]
+
+[project.scripts]
+superagenticmcp = "superagenticmcp.server:main"
+superagenticmcp-cli = "superagenticmcp.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ANAMIZED/SuperAgenticMCP"
+Repository = "https://github.com/ANAMIZED/SuperAgenticMCP"
+Issues = "https://github.com/ANAMIZED/SuperAgenticMCP/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/superagenticmcp"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src" = ""
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

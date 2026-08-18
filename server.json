@@ -1,0 +1,23 @@
+{
+  "name": "superagenticmcp",
+  "description": "The switchboard for your agent swarm — MCP-native router and multi-agent control plane that plans tasks, routes tool calls to racked servers, and streams execution.",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ANAMIZED/SuperAgenticMCP",
+  "homepage": "https://github.com/ANAMIZED/SuperAgenticMCP",
+  "author": "ANAMIZED",
+  "runtime": {
+    "command": "superagenticmcp",
+    "args": [],
+    "env": {}
+  },
+  "transports": ["stdio", "streamable-http"],
+  "keywords": [
+    "mcp",
+    "router",
+    "multi-agent",
+    "orchestration",
+    "switchboard",
+    "agentic"
+  ]
+}
