@@ -24,10 +24,7 @@ if mcp is not None:
             "name": "superagenticmcp",
             "version": "0.1.0",
             "status": "ok",
-            "note": (
-                "Alpha scaffold — routing and rack will land in "
-                "subsequent commits."
-            ),
+            "note": ("Alpha scaffold — routing and rack will land in subsequent commits."),
             "board": "http://localhost:7420 (when running with --board)",
         }
 
@@ -37,8 +34,7 @@ if mcp is not None:
         return {
             "servers": [],
             "note": (
-                "Rack population is not yet wired. "
-                "See superagenticmcp.html for the design target."
+                "Rack population is not yet wired. See superagenticmcp.html for the design target."
             ),
         }
 
@@ -46,9 +42,7 @@ if mcp is not None:
 def main() -> None:
     """Entry point for the `superagenticmcp` console script."""
     if mcp is None:
-        raise SystemExit(
-            "fastmcp is required. Install with: pip install -e '.[dev]'"
-        )
+        raise SystemExit("fastmcp is required. Install with: pip install -e '.[dev]'")
     mcp.run()
 
 
