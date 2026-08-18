@@ -1,17 +1,11 @@
 # Skills
 
-Agent-discoverable skills for SuperAgenticMCP.
+Server OS–style packaged skills. Each directory holds a `SKILL.md` with YAML frontmatter.
 
-Skills follow the Anthropic-style `SKILL.md` pattern and can be loaded by
-compatible agent runtimes. The root `SKILL.md` describes the project as a whole.
+| Skill | Purpose |
+|-------|---------|
+| `multi-agent-workflow` | Planner → workers → critic |
+| `routing-capability` | Capability + latency routing |
+| `memory-scope` | Run artifact graph |
 
-As multi-agent workflows land (planner → workers → critic), add focused skills
-under this directory, for example:
-
-```
-skills/
-  multi-agent-workflow/
-    SKILL.md
-  rack-management/
-    SKILL.md
-```
+Root [`SKILL.md`](../SKILL.md) is the package-level discovery metadata.
