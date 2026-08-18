@@ -1,0 +1,8 @@
+services:
+  superagenticmcp:
+    build: .
+    ports:
+      - "7420:7420"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped

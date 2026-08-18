@@ -1,87 +1,67 @@
-# AGENTS.md
+# AGENTS.md — SuperAgenticMCP
+
+This file is the contract for any AI coding agent working on this repository.
+
+**Layout standard:** [Server OS](https://github.com/ANAMIZED/server-os)  
+See `docs/LAYOUT.md`.
 
 ## What this project is
 
-**SuperAgenticMCP** is the switchboard for agent swarms.
+SuperAgenticMCP is the **switchboard for agent swarms**: an MCP-native router and
+multi-agent control plane that racks MCP servers, plans tasks (planner → workers →
+critic), routes by capability then latency, streams steps to a live board + JSONL
+log, and files runs into a memory-scope constellation.
 
-It is an MCP-native router and multi-agent control plane that:
+A senior engineer with only the source code and `README.md` must be able to install,
+exercise public surfaces, and verify via `scripts/verify.sh`.
 
-- Racks MCP servers (filesystem, web-search, GitHub, Postgres, memory, browser, code-runner, messenger, …)
-- Plans tasks (planner → workers → critic)
-- Routes each tool call by capability match, then latency
-- Streams every step to a live patch board and JSONL log
-- Files completed runs into a memory-scope constellation
+## How to run & verify
 
-It is local-first, single-process for the core path, and designed so the design can be felt before the full runtime lands.
+```bash
+pip install -e ".[dev]"
+make test
+bash scripts/verify.sh
+```
+
+MCP: `superagenticmcp`  
+CLI: `superagenticmcp-cli status`  
+Hero: `superagenticmcp.html` or `web/`
+
+## Hard rules for agents
+
+1. Never break the verify contract (`scripts/verify.sh`).
+2. Fail closed — no silent drops of tool calls or servers.
+3. Capabilities and allow-lists only — no ambient authority.
+4. Keep secrets out of source and the hero HTML.
+5. Simulation belongs only in the browser demo; the real server path must not invent tool results.
+6. Prefer small, focused changes. Update README.md and AGENTS.md when public surfaces change.
+7. Do not invent a parallel layout — Server OS is the permanent standard.
+
+## Surfaces that must stay working
+
+MCP Server, CLI, SDK import, skills frontmatter, AGENTS.md, `scripts/verify.sh`, CI.
 
 ## Repository layout
 
 ```
 src/superagenticmcp/
-  server.py          # MCP entry point (FastMCP) — primary interface
-  router.py          # Capability + latency routing, call budgets
-  agents/            # Planner, workers, critic orchestration
-  board/             # Live board, JSONL telemetry, receipts
-  memory/            # Memory-scope graph
-  config.py          # superagentic.json load / generate
-  sdk/               # Python client
-  cli.py             # CLI entry
+  server.py          # MCP entry (FastMCP)
+  cli.py             # CLI
+  sdk/               # Python client stubs
+  # router, agents, board, memory land as they are implemented
 
-skills/              # Agent-discoverable skills (SKILL.md style)
-docs/                # Human documentation
-superagenticmcp.html # Interactive browser shell (no install)
-server.json          # MCP registry metadata
-glama.json           # Glama registry metadata
+skills/*/SKILL.md    # Packaged skills
+web/                 # Control-plane path (Server OS convention)
+scripts/verify.sh    # End-to-end contract
+tests/               # Smoke + contract tests
+superagenticmcp.html # Zero-install hero demo
+docs/LAYOUT.md       # Layout standard declaration
 ```
 
 ## Conventions
 
 - Python **3.11+**
-- Package name: `superagenticmcp`
-- Import path: `superagenticmcp`
-- Entry point: `superagenticmcp` → `superagenticmcp.server:main`
-- MCP framework: **FastMCP**
+- Package: `superagenticmcp`
 - Lint/format: `ruff`
-- Config truth: the rack state and `superagentic.json` must stay in sync
-- Prefer observable failures (skip offline servers, emit clear log lines) over silent drops
-
-## How to run
-
-```bash
-pip install -e ".[dev]"
-superagenticmcp                 # MCP server on stdio
-python -m superagenticmcp       # same
-superagenticmcp up --board      # router + board UI
-```
-
-Zero-install demo:
-
-```
-open superagenticmcp.html
-# or
-https://htmlpreview.github.io/?https://github.com/ANAMIZED/SuperAgenticMCP/blob/main/superagenticmcp.html
-```
-
-## Boundaries (do not)
-
-- Do not hardcode API keys or secrets into source or the hero HTML
-- Do not invent tool results in the real server path — simulation belongs only in the browser demo
-- Do not remove call-budget or allow-list guardrails without an explicit design decision
-- Keep the MCP tool surface clear and stable; prefer additive changes
-- Do not treat the hero HTML as production runtime; it is a design-and-feel surface
-- Preserve provenance and timestamps on any telemetry or memory nodes
-
-## Adding a racked server
-
-1. Define the server package / command under the config schema (see `config.py` / `superagentic.json` shape)
-2. Expose tools via MCP so the router can capability-match
-3. Document latency class and category (Core / Research / Dev / Data / Comms)
-4. Wire into the board legend and rack UI when the real board is implemented
-5. Update README features / surfaces if the public surface changes
-
-## Related files for agents
-
-- `SKILL.md` — skill description for agent skill discovery
-- `server.json` — MCP registry metadata
-- `glama.json` — Glama registry metadata
-- `superagenticmcp.html` — interactive design prototype of the control surface
+- MCP framework: **FastMCP**
+- Config truth: rack state and `superagentic.json` stay in sync when routing lands
