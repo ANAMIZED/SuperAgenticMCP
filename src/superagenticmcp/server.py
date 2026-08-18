@@ -24,7 +24,10 @@ if mcp is not None:
             "name": "superagenticmcp",
             "version": "0.1.0",
             "status": "ok",
-            "note": "Alpha scaffold — routing and rack will land in subsequent commits.",
+            "note": (
+                "Alpha scaffold — routing and rack will land in "
+                "subsequent commits."
+            ),
             "board": "http://localhost:7420 (when running with --board)",
         }
 
@@ -33,7 +36,10 @@ if mcp is not None:
         """List currently racked MCP servers (stub)."""
         return {
             "servers": [],
-            "note": "Rack population is not yet wired. See superagenticmcp.html for the design target.",
+            "note": (
+                "Rack population is not yet wired. "
+                "See superagenticmcp.html for the design target."
+            ),
         }
 
 
