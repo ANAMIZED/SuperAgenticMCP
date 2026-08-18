@@ -1,15 +1,20 @@
 # SuperAgenticMCP
 
+[![CI](https://github.com/ANAMIZED/SuperAgenticMCP/actions/workflows/ci.yml/badge.svg)](https://github.com/ANAMIZED/SuperAgenticMCP/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![MCP](https://img.shields.io/badge/MCP-server-purple.svg)](src/superagenticmcp/server.py)
+[![SDK](https://img.shields.io/badge/SDK-Python-green.svg)](src/superagenticmcp/sdk/)
+[![CLI](https://img.shields.io/badge/CLI-superagenticmcp--cli-orange.svg)](src/superagenticmcp/cli.py)
+[![Board](https://img.shields.io/badge/Board-hero%20demo-009688.svg)](superagenticmcp.html)
+
 **The switchboard for your agent swarm.**
 
 SuperAgenticMCP is a production-oriented, MCP-native router and multi-agent control plane. It sits between your agents and the MCP servers they need — planning the task, routing each tool call to the right server, streaming every step, and filing results into memory.
 
 > Patch every agent into every tool.
 
-[![CI](https://github.com/ANAMIZED/SuperAgenticMCP/actions/workflows/ci.yml/badge.svg)](https://github.com/ANAMIZED/SuperAgenticMCP/actions/workflows/ci.yml)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.11%2B-blue)](https://www.python.org/)
-[![MCP](https://img.shields.io/badge/MCP-Server-green)](https://modelcontextprotocol.io/)
+**[Support Agentic OS Kernels ($99)](https://buy.stripe.com/bJecN63wObPv6Bf7Zm43S02)** · **[Agentic OS Cycle ($0.75)](https://buy.stripe.com/3cI14o8R8dXD3p3frO43S04)** · **[Public Goods Support](https://donate.stripe.com/00w5kE3wOg5L8Jn2F243S00)**
 
 **Layout standard:** [Server OS](https://github.com/ANAMIZED/server-os) — see [`docs/LAYOUT.md`](docs/LAYOUT.md).
 
@@ -123,6 +128,18 @@ superagenticmcp.html   # Hero demo
 docs/LAYOUT.md         # Permanent layout standard = Server OS
 AGENTS.md              # Agent contract
 ```
+
+---
+
+## Support
+
+| Offer | Link |
+|-------|------|
+| **Support Agentic OS Kernels** — $99 | [buy.stripe.com/…](https://buy.stripe.com/bJecN63wObPv6Bf7Zm43S02) |
+| **Agentic OS Cycle** — $0.75 | [buy.stripe.com/…](https://buy.stripe.com/3cI14o8R8dXD3p3frO43S04) |
+| **Public Goods Support** | [donate.stripe.com/…](https://donate.stripe.com/00w5kE3wOg5L8Jn2F243S00) |
+
+GitHub Sponsors: [ANAMIZED](https://github.com/sponsors/ANAMIZED)
 
 ---
 
