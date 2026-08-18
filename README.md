@@ -7,6 +7,7 @@
 [![SDK](https://img.shields.io/badge/SDK-Python-green.svg)](src/superagenticmcp/sdk/)
 [![CLI](https://img.shields.io/badge/CLI-superagenticmcp--cli-orange.svg)](src/superagenticmcp/cli.py)
 [![Board](https://img.shields.io/badge/Board-hero%20demo-009688.svg)](superagenticmcp.html)
+[![USDC](https://img.shields.io/badge/USDC-Base%20%7C%20ETH%20%7C%20Solana-2775CA.svg)](#usdc-crypto)
 
 **The switchboard for your agent swarm.**
 
@@ -14,7 +15,7 @@ SuperAgenticMCP is a production-oriented, MCP-native router and multi-agent cont
 
 > Patch every agent into every tool.
 
-**[Support Agentic OS Kernels ($99)](https://buy.stripe.com/bJecN63wObPv6Bf7Zm43S02)** · **[Agentic OS Cycle ($0.75)](https://buy.stripe.com/3cI14o8R8dXD3p3frO43S04)** · **[Public Goods Support](https://donate.stripe.com/00w5kE3wOg5L8Jn2F243S00)**
+**[Support Agentic OS Kernels ($99)](https://buy.stripe.com/bJecN63wObPv6Bf7Zm43S02)** · **[Agentic OS Cycle ($0.75)](https://buy.stripe.com/3cI14o8R8dXD3p3frO43S04)** · **[Public Goods Support](https://donate.stripe.com/00w5kE3wOg5L8Jn2F243S00)** · **[USDC](#usdc-crypto)**
 
 **Layout standard:** [Server OS](https://github.com/ANAMIZED/server-os) — see [`docs/LAYOUT.md`](docs/LAYOUT.md).
 
@@ -133,6 +134,8 @@ AGENTS.md              # Agent contract
 
 ## Support
 
+### Fiat (Stripe)
+
 | Offer | Link |
 |-------|------|
 | **Support Agentic OS Kernels** — $99 | [buy.stripe.com/…](https://buy.stripe.com/bJecN63wObPv6Bf7Zm43S02) |
@@ -141,6 +144,18 @@ AGENTS.md              # Agent contract
 
 GitHub Sponsors: [ANAMIZED](https://github.com/sponsors/ANAMIZED)
 
+### USDC (crypto)
+
+Non-custodial addresses controlled by ANAMIZED. Pure **x402** micropayments preferred for agents — see [x402-cloudflare-starter](https://github.com/ANAMIZED/x402-cloudflare-starter).
+
+| Network | Address | Explorer |
+|---------|---------|----------|
+| **Base** | `0xD3d0E9eDAe3Ac7bb199a8EAA761BdA423b878438` | [basescan](https://basescan.org/address/0xD3d0E9eDAe3Ac7bb199a8EAA761BdA423b878438) |
+| **Ethereum** | `0xD3d0E9eDAe3Ac7bb199a8EAA761BdA423b878438` | [etherscan](https://etherscan.io/address/0xD3d0E9eDAe3Ac7bb199a8EAA761BdA423b878438) |
+| **Solana** | `ETQwWf19axArsY493UfC6bxe2BmEzmzvCb58PPnC38A` | [solscan](https://solscan.io/account/ETQwWf19axArsY493UfC6bxe2BmEzmzvCb58PPnC38A) |
+
+Send only **USDC** on the matching network. Wrong asset or chain can mean permanent loss.
+
 ---
 
 ## Related projects
@@ -148,7 +163,7 @@ GitHub Sponsors: [ANAMIZED](https://github.com/sponsors/ANAMIZED)
 - [server-os](https://github.com/ANAMIZED/server-os) — **layout standard** · agents as processes
 - [OpenGOS](https://github.com/ANAMIZED/OpenGOS) — grants + public-goods funding MCP
 - [LRSI](https://github.com/ANAMIZED/LRSI) — local recursive self-improvement kernel
-- [x402-cloudflare-starter](https://github.com/ANAMIZED/x402-cloudflare-starter) — USDC micropayments
+- [x402-cloudflare-starter](https://github.com/ANAMIZED/x402-cloudflare-starter) — USDC micropayments (Base + Solana)
 
 ---
 
