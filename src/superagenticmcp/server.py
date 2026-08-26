@@ -81,9 +81,7 @@ if mcp is not None:
         ],
         command: Annotated[
             str,
-            Field(
-                description="stdio command or streamable HTTP URL for the child MCP server."
-            ),
+            Field(description="stdio command or streamable HTTP URL for the child MCP server."),
         ],
         notes: Annotated[
             str,
@@ -135,13 +133,16 @@ if mcp is not None:
         ],
         preferred_server: Annotated[
             str,
-            Field(
-                description="Optional rack name to prefer. Empty means first match / all."
-            ),
+            Field(description="Optional rack name to prefer. Empty means first match / all."),
         ] = "",
     ) -> dict:
         names = [s.get("name") for s in _RACK]
-        chosen = preferred_server if preferred_server in names else (names[0] if names else None)
+        if preferred_server in names:
+            chosen = preferred_server
+        elif names:
+            chosen = names[0]
+        else:
+            chosen = None
         return {
             "task": task,
             "candidates": names,
