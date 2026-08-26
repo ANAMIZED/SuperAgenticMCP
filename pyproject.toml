@@ -1,6 +1,6 @@
 [project]
 name = "superagenticmcp"
-version = "0.1.0"
+version = "0.2.0"
 description = "SuperAgenticMCP — the switchboard for your agent swarm. MCP-native router and multi-agent control plane."
 readme = "README.md"
 requires-python = ">=3.11"
