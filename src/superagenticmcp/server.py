@@ -156,7 +156,7 @@ def main() -> None:
     """Entry point for the `superagenticmcp` console script."""
     if mcp is None:
         raise SystemExit("fastmcp is required. Install with: pip install -e '.[dev]'")
-    mcp.run()
+    mcp.run(transport="stdio")
 
 
 if __name__ == "__main__":
