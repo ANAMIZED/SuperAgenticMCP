@@ -75,9 +75,20 @@ if mcp is not None:
         annotations=tool_hints("Add a server to the rack", **_RW),
     )
     def rack_add(
-        name: Annotated[str, Field(description="Short rack key used by route_task and rack_remove.")],
-        command: Annotated[str, Field(description="stdio command or streamable HTTP URL for the child MCP server.")],
-        notes: Annotated[str, Field(description="Optional human note describing capabilities.")] = "",
+        name: Annotated[
+            str,
+            Field(description="Short rack key used by route_task and rack_remove."),
+        ],
+        command: Annotated[
+            str,
+            Field(
+                description="stdio command or streamable HTTP URL for the child MCP server."
+            ),
+        ],
+        notes: Annotated[
+            str,
+            Field(description="Optional human note describing capabilities."),
+        ] = "",
     ) -> dict:
         entry = {"name": name.strip(), "command": command.strip(), "notes": notes}
         _RACK[:] = [s for s in _RACK if s.get("name") != entry["name"]]
@@ -95,7 +106,10 @@ if mcp is not None:
         annotations=tool_hints("Remove a server from the rack", **_DEL),
     )
     def rack_remove(
-        name: Annotated[str, Field(description="Rack key previously passed to rack_add.")],
+        name: Annotated[
+            str,
+            Field(description="Rack key previously passed to rack_add."),
+        ],
     ) -> dict:
         before = len(_RACK)
         _RACK[:] = [s for s in _RACK if s.get("name") != name]
@@ -115,8 +129,16 @@ if mcp is not None:
         annotations=tool_hints("Plan a task against the rack", **_RO),
     )
     def route_task(
-        task: Annotated[str, Field(description="Natural-language goal to route across racked MCP servers.")],
-        preferred_server: Annotated[str, Field(description="Optional rack name to prefer. Empty means first match / all.")] = "",
+        task: Annotated[
+            str,
+            Field(description="Natural-language goal to route across racked MCP servers."),
+        ],
+        preferred_server: Annotated[
+            str,
+            Field(
+                description="Optional rack name to prefer. Empty means first match / all."
+            ),
+        ] = "",
     ) -> dict:
         names = [s.get("name") for s in _RACK]
         chosen = preferred_server if preferred_server in names else (names[0] if names else None)
