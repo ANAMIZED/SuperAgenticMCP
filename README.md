@@ -63,7 +63,9 @@ SuperAgenticMCP is a production-oriented, MCP-native router and multi-agent cont
 | Dynamic `superagentic.json` | 🚧 |
 | Server OS layout + verify contract | ✅ |
 | Self-learning model routing (bandit) | 🚧 |
-| Agentic commerce (x402) | 🚧 |
+| Agentic commerce (x402) | ✅ routes to [x402-cloudflare-starter](https://github.com/ANAMIZED/x402-cloudflare-starter) `GET /v1/cycle` · `/v1/search` · `/v1/draft` |
+
+Commerce is **not** reimplemented here. Rack the x402 Worker; keep Stripe Payment Links for humans. Receipts are not Desk unlocks.
 
 ---
 
