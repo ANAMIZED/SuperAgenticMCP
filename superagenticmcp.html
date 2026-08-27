@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="0; url=https://htmlpreview.github.io/?https://raw.githubusercontent.com/ANAMIZED/SuperAgenticMCP/main/docs/hero-note.md">
 <title>SuperAgenticMCP — Hero Demo</title>
 <style>
   body { font-family: system-ui, sans-serif; background: #D9D4C9; color: #221F1A; max-width: 40rem; margin: 4rem auto; padding: 0 1.5rem; line-height: 1.5; }
@@ -14,12 +13,12 @@
 <body>
   <h1>SuperAgenticMCP</h1>
   <p><strong>The switchboard for your agent swarm.</strong></p>
-  <p>The full interactive hero demo (patch board, mission console, memory constellation, server rack) is the design prototype for this project.</p>
-  <p>Clone the repo and open the design source, or run the MCP server:</p>
+  <p>Production traffic is the MCP server (<code>superagenticmcp</code> over stdio). The page board is a WebMCP front door for visiting browser agents.</p>
+  <p><a href="web/board.html">Open the WebMCP board</a> — tools: <code>status</code>, <code>list_rack</code>, <code>route_task</code>, <code>rack_add</code>, <code>rack_remove</code>.</p>
   <pre><code>pip install -e ".[dev]"
 superagenticmcp
 superagenticmcp-cli status</code></pre>
-  <p>See <a href="README.md">README.md</a> · <a href="AGENTS.md">AGENTS.md</a> · <a href="SKILL.md">SKILL.md</a></p>
-  <p style="color:#5E574B;font-size:0.9rem">SA·MCP MK.4 · Design prototype landing · Full interactive board lands with the board runtime.</p>
+  <p>See <a href="README.md">README.md</a> · <a href="AGENTS.md">AGENTS.md</a> · <a href="docs/WEBMCP.md">docs/WEBMCP.md</a></p>
+  <p style="color:#5E574B;font-size:0.9rem">SA·MCP MK.4 · WebMCP page layer · stdio MCP remains the system of record.</p>
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SuperAgenticMCP — WebMCP board</title>
+  <style>
+    :root { --bg:#D9D4C9; --ink:#221F1A; --dim:#5E574B; --accent:#E4572E; --panel:#ECE8DF; }
+    body { margin:0; font:15px/1.5 system-ui,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:760px; margin:0 auto; padding:32px 20px 64px; }
+    .panel { background:var(--panel); border-radius:10px; padding:14px 16px; margin:14px 0; }
+    code { background:#fff; padding:.1em .35em; border-radius:4px; }
+    button { background:var(--accent); color:#fff; border:0; border-radius:6px; padding:6px 10px; cursor:pointer; }
+    #webmcp-log, #rack-view { white-space:pre-wrap; font:12px/1.4 ui-monospace,monospace; color:var(--dim); }
+    a { color:var(--accent); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>SuperAgenticMCP board</h1>
+  <p>In-page rack for visiting browser agents. Production path remains <code>superagenticmcp</code> over stdio.</p>
+  <div class="panel" id="webmcp-status">Detecting WebMCP…</div>
+  <div class="panel">
+    <strong>Local rack</strong>
+    <div id="rack-view">[]</div>
+    <p>
+      <input id="rack-name" placeholder="name" size="12">
+      <input id="rack-cmd" placeholder="command or URL" size="28">
+      <button id="rack-add-btn" type="button">rack_add</button>
+    </p>
+  </div>
+  <div class="panel">Tools: <code>status</code> · <code>list_rack</code> · <code>route_task</code> · <code>rack_add</code> · <code>rack_remove</code></div>
+  <div class="panel"><strong>Log</strong><div id="webmcp-log"></div></div>
+  <p><a href="../superagenticmcp.html">hero</a> · <a href="https://github.com/ANAMIZED/SuperAgenticMCP">repo</a></p>
+</main>
+<script src="webmcp.js"></script>
+<script src="board-webmcp.js"></script>
+</body>
+</html>
